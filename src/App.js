@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import TasksPage from "./components/TasksPage";
-import { createTask } from "./actions";
+import { createTask, editTask } from "./actions";
 
 class App extends Component {
   onCreateTask = ({ title, description }) => {
