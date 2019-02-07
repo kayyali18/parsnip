@@ -20,6 +20,7 @@ export default function tasks(state = { tasks: mockTasks }, action) {
     case "CREATE_TASK":
       return { tasks: [...state.tasks, action.payload] };
 
+
     case "EDIT_TASK":
       return {
         tasks: state.tasks.map(task => {
@@ -29,7 +30,6 @@ export default function tasks(state = { tasks: mockTasks }, action) {
           return task;
         }),
       };
-
     default:
       return state;
   }
