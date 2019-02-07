@@ -20,6 +20,16 @@ export default function tasks(state = { tasks: mockTasks }, action) {
     case "CREATE_TASK":
       return { tasks: [...state.tasks, action.payload] };
 
+
+    case "EDIT_TASK":
+      return {
+        tasks: state.tasks.map(task => {
+          if (task.id === action.payload.id) {
+            return { id: task.id, ...action.payload.params };
+          }
+          return task;
+        }),
+      };
     default:
       return state;
   }
